@@ -1,0 +1,235 @@
+
+    /* ===== GLOBAL ===== */
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #f8f9fa;
+      color: #111;
+    }
+
+    section {
+      padding: 100px 0;
+      min-height: 100vh;
+    }
+
+    /* ===== NAVBAR ===== */
+    .custom-nav {
+      padding-top: 15px;
+      z-index: 999;
+    }
+
+    .nav-pill {
+      background: #fff;
+    }
+
+    .nav-pill .nav-link {
+      color: #555;
+      padding: 8px 18px;
+      border-radius: 999px;
+      font-weight: 500;
+    }
+
+    .nav-pill .nav-link.active,
+    .nav-pill .nav-link:hover {
+      background: #f1f1f1;
+      color: #000;
+    }
+    /* Hero Profile (Original) */
+.profile-img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  transition: opacity 0.3s ease;
+}
+
+/* Mini Profile in Navbar */
+.mini-profile-container {
+  position: absolute;
+  right: 20px; /* Adjust to match your 2nd image */
+  top: 50%;
+  transform: translateY(-50%);
+  opacity: 0; /* Hidden by default */
+  transition: all 0.4s ease-in-out;
+}
+
+.mini-profile {
+
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  border: 2px solid #6c5ce7;
+  align-content: center;
+}
+
+/* When the user scrolls down */
+body.scrolled .mini-profile-container {
+  opacity: 2;
+}
+
+body.scrolled .profile-img {
+  opacity: 0; /* Optional: hides the big one so it doesn't look cluttered when scrolling back up */
+}
+
+
+    /* ===== HERO ===== */
+    #home {
+      background: radial-gradient(circle at top, #6c5ce7, #0f2027);
+      color: white;
+      display: flex;
+      align-items: center;
+      text-align: center;
+    }
+
+    .profile-img {
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      border: 4px solid white;
+      object-fit: cover;
+      margin-bottom: 20px;
+    }
+
+    .social-icons a {
+      color: white;
+      font-size: 20px;
+      margin: 0 8px;
+      width: 42px;
+      height: 42px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.15);
+      transition: 0.3s;
+    }
+
+    .social-icons a:hover {
+      background: white;
+      color: #000;
+    }
+
+    /* ===== SKILLS ===== */
+    .skill-box {
+      background: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+
+    /* ===== PROJECTS ===== */
+    .project-card {
+      transition: 0.3s;
+    }
+
+    .project-card:hover {
+      transform: translateY(-10px);
+    }
+    /* ===== CONTACT FORM ===== */
+    .form-control {
+      background: var(--card-bg);
+      border: 1px solid rgba(0,0,0,0.1);
+      border-radius: 12px;
+      padding: 12px;
+      color: var(--text-main);
+    }
+    .btn-submit {
+      background: #0f172a;
+      color: white;
+      border-radius: 50px;
+      padding: 10px 25px;
+      font-weight: 500;
+    }
+
+    /* ===== THEME BUTTON ===== */
+    .theme-btn {
+      position: fixed;
+      right: 20px;
+      top: 70%;
+      width: 45px;
+      height: 45px;
+      border-radius: 50%;
+      border: none;
+      background: #111;
+      color: white;
+      font-size: 18px;
+      cursor: pointer;
+      z-index: 1000;
+    }
+
+    /* ===== DARK MODE ===== */
+    body.dark {
+      background: #0f172a;
+      color: white;
+    }
+
+    body.dark .nav-pill {
+      background: #1e293b !important;
+    }
+
+    body.dark .nav-link {
+      color: #ddd;
+    }
+
+    body.dark .nav-link.active {
+      background: #334155;
+      color: #fff;
+    }
+
+    body.dark .skill-box,
+    body.dark .card {
+      background: #1e293b;
+      color: white;
+    }
+    /* --- RESPONSIVE BASICS --- */
+
+/* Ensure images don't overflow on small screens */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Adjust section padding for mobile */
+section {
+  padding: 80px 15px; /* Added side padding for mobile breathability */
+}
+
+/* Hero Section Responsiveness */
+#home {
+  text-align: center; /* Center content on all screens */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+/* Navbar: Adjust for small screens */
+@media (max-width: 576px) {
+  .navbar-nav {
+    font-size: 0.85rem; /* Shrink font size slightly */
+    gap: 5px;
+  }
+  
+  .nav-link {
+    padding: 5px 10px !important;
+  }
+
+  .profile-img {
+    width: 120px; /* Smaller profile pic on mobile */
+    height: 120px;
+  }
+
+  h1 {
+    font-size: 1.8rem; /* Scale down large titles */
+  }
+}
+
+/* Theme Toggle placement */
+.theme-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1050; /* Ensure it stays above everything */
+  padding: 10px;
+}
+  
